@@ -21,7 +21,6 @@ const CountryButton = (props) => {
   const backgroundColor = useMemo(() => {
     if (answers.length < 2 && answers[0] === title) return "blue";
     if (answers.length > 1 && answers.includes(title)) return "red";
-    return 'yellow';
   }, [answers, isClicked, title]);
 
   return (
