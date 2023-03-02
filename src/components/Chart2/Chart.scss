@@ -1,0 +1,19 @@
+$candle-width: 50px;
+$candle-count: 7;
+$gap: 10px;
+
+.chart {
+  margin-top: 1rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: $candle-width * $candle-count + $candle-count * $gap;
+  border: 1px solid #555;
+  &--reversed {
+    flex-direction: row-reverse;
+  }
+}
+
+.candle {
+  width: $candle-width;
+}

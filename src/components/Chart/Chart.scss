@@ -1,0 +1,21 @@
+$candle-width: 50px;
+
+.chart {
+  margin-top: 1rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: $candle-width * 7 + 70;
+  height: 300px;
+  border: 1px solid #555;
+  &--reversed {
+    flex-direction: row-reverse;
+  }
+}
+
+.candle {
+  height: 0;
+  width: $candle-width;
+  transition: all .4s;
+}
+

@@ -1,0 +1,56 @@
+.todos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+
+  h1 {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+select {
+  margin-top: 1.5rem;
+}
+
+.subtask {
+  &__status {
+    padding: 0 0 1rem;
+    font-size: 20px;
+  }
+  &__link {
+    color: dodgerblue;
+    text-decoration: none;
+    display: inline-flex;
+    gap: .5rem;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    &:hover {
+      color: blue;
+    }
+    &::before {
+      content: "▶";
+      position: relative;
+      color: black;
+      transition: transform .2s;
+    }
+    &--showed {
+      &::before {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  &s {
+    &__title {
+      font-weight: 600;
+      font-size: 18px;
+    }
+    &__description {
+      padding: 0 0 12px;
+      margin: 0;
+    }
+  }
+}
