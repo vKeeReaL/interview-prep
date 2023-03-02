@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 const mockData = {
   Poland: "Warsaw",
@@ -9,26 +9,26 @@ const mockData = {
 
 const CountryButton = (props) => {
   const { handleClick, title, answers } = props;
-  const [isClicked, setClicked] = useState(false)
+  const [isClicked, setClicked] = useState(false);
 
   function handleIsClicked() {
-    handleClick(title)
-    if (!isClicked)  {
+    handleClick(title);
+    if (!isClicked) {
       setClicked(true);
     }
   }
 
-  console.log('isClicked',isClicked);
-
   const backgroundColor = useMemo(() => {
     if (answers.length < 2 && answers[0] === title) return "blue";
     if (answers.length > 1 && answers.includes(title)) return "red";
-  }, [answers, isClicked]);
+    return 'yellow';
+  }, [answers, isClicked, title]);
 
   return (
     <button onClick={handleIsClicked} key={title} style={{ backgroundColor }}>
       {title}
     </button>
+
   );
 };
 
